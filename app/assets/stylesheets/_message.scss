@@ -1,0 +1,40 @@
+.chat-side {
+  background-color: #253141;
+  width: 300px;
+  height: 100px;
+  color: #000;
+  float: left;
+}
+
+.side-header {
+    background-color: #253141;
+    height: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.groups {
+    height: calc(100vh - 100px);
+    background-color: #2f3e51;
+    padding: 20px 20px 0;
+    overflow: scroll;
+}
+
+.chat-main {
+  &.header {
+    height: 100px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 1px #eee;
+    overflow: scroll;
+  }
+  &.header-leftbox {
+    margin-top: 35px;
+  }
+  &.message {
+    margin-top: 35px;
+  }
+  }
