@@ -4,8 +4,9 @@
 .left-content
   .left-content__top
     test-test
-    = fa_icon 'edit'
-    = fa_icon 'cog'
+    .left-content__top__icon
+      = fa_icon 'edit'
+      = fa_icon 'cog'
   .left-content__bottom
     .left-content__bottom__title
       test-G1
@@ -27,7 +28,7 @@
     .main-content__top__title
       text-group
     .main-content__top__text
-      member:AAAAA
+      Member:AAAAA
   .main-content__center
     .main-content__center__username
       test-user
@@ -35,5 +36,9 @@
       2019/9/14(Sat)00:00:00
     .main-content__center__text
       こんにちは！
-  .main-content__bottom
-    メッセージ入力
+  .main-content__formarea
+    .main-content__formarea__form
+    %input{:placeholder => "type a messeage",}
+    = fa_icon 'image'
+    .main-content__formarea__sendbtn
+      Send
