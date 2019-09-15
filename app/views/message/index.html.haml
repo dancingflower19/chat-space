@@ -38,7 +38,6 @@
       こんにちは！
   .main-content__formarea
     .main-content__formarea__form
-    %input{:placeholder => "type a messeage",}
+    %input{:name => "message", :placeholder => "type a message", :type => "text"}
     = fa_icon 'image'
-    .main-content__formarea__sendbtn
-      Send
+    %p.sendbtn Send
