@@ -13,7 +13,7 @@
     color: white;
     font-size: 16px;
     font-weight: bold;
-    padding: 35px 20px 35px 20px;
+    padding: 35px 20px 39px 20px;
   }
   &__bottom {
     height: calc(100vh - 100px);
@@ -24,11 +24,11 @@
   }
   &__bottom__title{
     font-size: 15px;
-    padding: 20px 0px 5px 20px;
+    padding: 20px 0px 5px 0px;
   }
   &__bottom__text{
     font-size: 11px;
-    padding: 0px 0px 40px 20px;
+    padding: 0px 0px 40px 0px;
   }
 }
 
@@ -54,11 +54,12 @@
       &__title {
         font-size: 20px;
         color: #333333;
-        padding: 35px 0px 15px 40px;
+        padding: 35px 0px 0px 40px;
       }
       &__text {
         font-size: 12px;
         color: #999999;
+        padding: 15px 0px 0px 0px;
       }
   }
   &__center {
