@@ -36,11 +36,9 @@
       2019/9/14(Sat)00:00:00
     .main-content__center__text
       こんにちは！
-  .main-content__bottom
-    はば
-    .main-content__bottom__form
-    メッセージ入力
-    .main-content__bottom__sendbtn
-    青いボタン
-    .main-content__bottom__imageicon
-      = fa_icon 'image'
+  .main-content__formarea
+    .main-content__formarea__form
+    %input{:placeholder => "type a messeage",}
+    = fa_icon 'image'
+    .main-content__formarea__sendbtn
+      Send

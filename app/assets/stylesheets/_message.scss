@@ -16,6 +16,7 @@
     padding: 35px 20px 39px 20px;
       &__icon {
         float: right;
+        font-size: 16px;
       }
   }
   &__bottom {
@@ -67,10 +68,10 @@
       }
   }
   &__center {
-    height: calc(100vh - 90px);
     font-size: 15px;
     color: black;
     background-color: #fafafa;
+    height: 563px;
     padding: 46px 40px 0px 40px;
       &__username {
         font-size: 16px;
@@ -87,14 +88,40 @@
         color: #333333;
       }
   }
-  &__bottom {
-    width: calc(100vw - 300px);
-    font-size: 16px;
-    color: #434A54;
-    &__form{
-      background-color: white;
-    }
-    background-color: #ddd;
+  &__formarea {
     padding: 20px 40px;
+    background-color: #ddd;
+      &__sendbtn {
+        background-color: #38AEF0;
+        color: white;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 20px;
+        margin-top: 28px;
+        right: 40px;
+        float:right;
+      }
+      &__form {
+        width: calc(100vw - 300px - 177px);
+        font-size: 16px;
+        left:40px;
+        float:left;
+        padding: 10px 0 10px 10px;
+        position: absolute;
+      }
+      &__imageicon {
+        font-size: 20px;
+        float:left;
+      }
+      &__sendbtn {
+        background-color: #38AEF0;
+        color: white;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 20px;
+        right: 40px;
+        float:right;
+        position: relative;
+      }
   }
 }
