@@ -21,23 +21,29 @@
     .left-content__bottom__text
       よろしくお願いします。
 
-.main-content
-  .main-content__top
-    .main-content__top__edit-btn
+.message
+  .message__top
+    .message__top__edit-btn
       Edit
-    .main-content__top__title
+    .message__top__title
       text-group
-    .main-content__top__text
+    .message__top__text
       Member:AAAAA
-  .main-content__center
-    .main-content__center__username
-      test-user
-    .main-content__center__date
-      2019/9/14(Sat)00:00:00
-    .main-content__center__text
-      こんにちは！
-  .main-content__formarea
-    .main-content__formarea__form
-    %input{:name => "message", :placeholder => "type a message", :type => "text"}
-    = fa_icon 'image'
-    %p.sendbtn Send
+  .message__center
+    .message__center__upper
+      .message__center__upper__username
+        test-user
+      .message__center__date
+        2019/9/14(Sat)00:00:00
+    .message__center__lower
+      .message__center__text
+        こんにちは！
+
+.form
+  %form
+  %input.form__message
+  .form__mask
+  %label.form__mask__image
+    = fa_icon 'picture-o', class: 'icon'
+  %input.hidden{type: 'file'}
+  %input.form__submit{type: 'submit', value: 'Send'}
