@@ -38,6 +38,7 @@
 
 .message {
   width: calc(100vw - 300px);
+  float: right;
   &__top {
     font-size: 15px;
     color: black;
@@ -84,7 +85,7 @@
         }
       }
       &__lower {
-        &__message {
+        &__text {
           font-size: 16px;
           color: #434a54;
         }
