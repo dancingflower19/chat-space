@@ -38,7 +38,6 @@
 
 .message {
   width: calc(100vw - 300px);
-  float: right;
   &__top {
     font-size: 15px;
     color: black;
@@ -69,7 +68,7 @@
   }
   &__center {
     background-color: #fafafa;
-    height: calc(100vh - 270px);
+    height: calc(100vh - 264px);
     padding: 46px 40px;
       &__upper {
         display: flex;
@@ -94,15 +93,18 @@
 }
 
 .form {
-  background-color: #DDDDDD;
+  background-color: #DDD;
   box-sizing: border-box;
   height: 90px;
   padding: 20px 50px 20px 40px;
+  float: left;
+  width: calc(100% - 300px);
   &__message {
     border: none;
     float: left;
     height: 50px;
-    width: calc(100% - 150px);
+    width: calc(100% - 160px);
+    padding: 0px 0px 0px 10px;
   }
   &__mask {
     background-color: white;
