@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
- get 'messages' => 'message#index'
+  devise_for :users
+  get 'messages' => 'message#index'
 end
