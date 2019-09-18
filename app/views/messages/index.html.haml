@@ -1,26 +1,8 @@
-.header
-
-= render 'shared/left-content'
+.side-bar
+  = render 'shared/side_bar'
 
 .message
   = render @messages
-
-  .message__top
-    .message__top__edit-btn
-      Edit
-    .message__top__title
-      text-group
-    .message__top__text
-      Member:AAAAA
-  .message__center
-    .message__center__upper
-      .message__center__upper__username
-        test-user
-      .message__center__upper__date
-        2019/9/14(Sat)00:00:00
-    .message__center__lower
-      .message__center__lower__text
-        こんにちは！
 
 .form
   = form_for [@group, @message] do |f|
