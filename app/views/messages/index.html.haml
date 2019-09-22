@@ -3,21 +3,18 @@
 
 .chat
   .header
-    .header__left-header
-      .header__left-header__title
-      .header__left-header__members
-        .header__left-header__members__member
-  .right-header
-    .right-header__botton
-  .message
+    .left-header
+      .left-header__title
+        = @group.name
+      %ul.left-header__members
+        %li.members
+          -@group.users.each do |user|
+            = user.name
+    .right-header
+      .right-header__button
+        Edit
+  .messages
     = render @messages
-    .message__message
-      .message__message__upper-message
-        .message__message__upper-message__user-name
-        .message__message__upper-message__date
-      .message__message__lower-message
-        .message__message__lower-message__content
-
   .form
     = form_for [@group, @message] do |f|
       = f.text_field :content, class: 'form__message', placeholder: 'type a message'
