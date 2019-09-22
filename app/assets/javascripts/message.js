@@ -1,5 +1,6 @@
 $(function() {
   function buildMessage(message) {
+    var img = message.image ? `<img src= ${ message.image }>` : "";
     var html =`<div class="message" data-message_id=“${message.id}”>
     <div class="upper-message">
     <div class="upper-message__user-name">
@@ -14,6 +15,7 @@ $(function() {
     ${message.content}
     </p>
     </div>
+    ${img}
     </div>`
 return html;
 }
@@ -32,7 +34,7 @@ $('#new_message').on('submit', function(e){
   })
   .done(function(message){
     var html = buildMessage(message);
-    $('.message').append(html)
+    $('.messages').append(html)
     $('#message_content').val('')
     $('.form__submit').prop('disabled', false);
     $('.messages').animate({scrollTop: $(".messages")[0].scrollHeight}, 1500);
@@ -45,5 +47,4 @@ $('#new_message').on('submit', function(e){
   function ScrollToNewMessage(){
     $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
   }
-
 });
