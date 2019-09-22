@@ -18,10 +18,6 @@ $(function() {
 return html;
 }
 
-function ScrollToNewMessage(){
-  $('.lower-message_content').animate({scrollTop: $('.lower-message_content')[0].scrollHeight}, 'fast');
-}
-
 $('#new_message').on('submit', function(e){
   e.preventDefault();
   var formData = new FormData(this);
@@ -39,9 +35,15 @@ $('#new_message').on('submit', function(e){
     $('.message').append(html)
     $('#message_content').val('')
     $('.form__submit').prop('disabled', false);
+    $('.messages').animate({scrollTop: $(".messages")[0].scrollHeight}, 1500);
   })
   .fail(function(){
-    alart('エラー');
+    alart('メッセージの送信に失敗しました');
   })
   })
+
+  function ScrollToNewMessage(){
+    $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+  }
+
 });
