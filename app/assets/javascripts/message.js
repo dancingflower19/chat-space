@@ -33,6 +33,7 @@ $('#new_message').on('submit', function(e){
     contentType: false
   })
   .done(function(message){
+    var html = buildMessage(message);
     $('.messages').append(html)
     $('.form__submit').prop('disabled', false);
     $('form').get(0).reset();
@@ -42,7 +43,7 @@ $('#new_message').on('submit', function(e){
     alert('メッセージの送信に失敗しました');
   })
   })
-
+　
   function ScrollToNewMessage(){
     $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
   }
