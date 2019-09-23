@@ -1,4 +1,5 @@
 $(document).on('turbolinks:load',function() {
+  console.log("test")
 
   var search_list = $("#user-search-result");
   var member_list = $("#member-append");
@@ -19,22 +20,27 @@ $(document).on('turbolinks:load',function() {
                 search_list.append(html);
   }
 
-  $("#user-search-field").on("keyup", function(e) {
+  $(".chat-group-form__search").on("keyup", function(e) {
+    e.preventDefault();
     var input = $("#user-search-field").val();
-    console.log("aaa");
+    console.log(input)
+    var userIDs = []
+    $('.chat-group-users .chat-group-user').each(function(user){
+      userIDs.push($(user).attr('id'))
+    })
+     //console.log("aaa");
 
     $.ajax({
       url: '/users',
       type: 'GET',
-      data: ('keyword=' + input),
+      data: {keyword: input,
+              user_ids: userIDs},
       dataType: 'json'
     })
 
     .done(function(users) {
-      if (users.length === 0) {
-        $('#user-search-result').empty();
-      }
-      else if (input.length !== 0){
+      //console.log(user)
+      if (input.length !== 0){
         $('#user-search-result').empty();
         users.forEach(function(user){
             appendUser(user)
