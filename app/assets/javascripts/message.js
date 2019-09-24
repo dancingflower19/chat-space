@@ -43,7 +43,6 @@ $('#new_message').on('submit', function(e){
     alert('メッセージの送信に失敗しました');
   })
   })
-　
   function ScrollToNewMessage(){
     $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
   }
