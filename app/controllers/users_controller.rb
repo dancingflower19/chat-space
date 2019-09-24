@@ -1,5 +1,15 @@
 class UsersController < ApplicationController
 
+  def index
+      # binding.pry
+    # if文で@user空の指定をする
+    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%").where.not(id: params[:user_IDs])
+    respond_to do |format|
+      format.json
+      format.html
+    end
+  end
+
   def edit
   end
 
