@@ -2,7 +2,7 @@ $(function(){
 
   function buildMessage(message) {
     var img = message.image.url ? `<img src= ${ message.image.url }>` : "";
-    var html =`<div class="message" data-message_id=“${message.id}”>
+    var html =`<div class="message" data-message-id=${message.id}>
                 <div class="upper-message">
                   <div class="upper-message__user-name">
                     ${message.user_name}
@@ -48,8 +48,7 @@ $(function(){
 
   var reloadMessages = function() {
     if (window.location.href.match(/\/groups\/\d+\/messages/)){
-      last_message_id = $('.message:last').data('message_id');
-      console.log(last_message_id);
+      last_message_id = $('.message:last').data('message-id');
       $.ajax({
         url: "api/messages",
         type: 'GET',
@@ -57,15 +56,15 @@ $(function(){
         dataType: 'json'
       })
       .done(function(messages) {
-        if (messages.length > 0){
+        //if (messages.length > 0){
             var insertHTML = '';
             messages.forEach(function(message){
               insertHTML = buildHTML(message);
               $('.messages').append(insertHTML);
-              ScrollToNewMessage();
           })
+          ImageBitmapRenderingContext.
             $('.messages').animate({scrollTop: $(".messages")[0].scrollHeight}, 1500);
-          }})
+          })
       .fail(function() {
             alert('自動更新に失敗しました');
           });
