@@ -8,7 +8,7 @@ $(function(){
                     ${message.user_name}
                   </div>
                   <div class="upper-message__date">
-                    ${message.date}
+                    ${message.created_at}
                   </div>
                 </div>
                 <div class="lower-message">
@@ -18,7 +18,7 @@ $(function(){
                 </div>
                 ${img}
               </div>`
-              return html;
+        return html;
   }
 
   $('#new_message').on('submit', function(e){
@@ -52,23 +52,22 @@ $(function(){
       $.ajax({
         url: "api/messages",
         type: 'GET',
-        data: { last_message_id: last_message_id},
-        dataType: 'json'
+        dataType: 'json',
+        data: { last_message_id: last_message_id}
       })
       .done(function(messages) {
-        //if (messages.length > 0){
-            var insertHTML = '';
-            messages.forEach(function(message){
-              insertHTML = buildHTML(message);
-              $('.messages').append(insertHTML);
-          })
-          ImageBitmapRenderingContext.
-            $('.messages').animate({scrollTop: $(".messages")[0].scrollHeight}, 1500);
-          })
+        var insertHTML = '';
+        console.log(messages)
+        messages.forEach(function (message){
+          insertHTML = buildMessage(message);
+          $('.messages').append(insertHTML);
+        })
+        $('.messages').animate({scrollTop: $(".messages")[0].scrollHeight}, 1500);
+      })
       .fail(function() {
-            alert('自動更新に失敗しました');
-          });
-        }
-      };
-      setInterval(reloadMessages, 10000);
+        alert('自動更新に失敗しました');
+      });
+    }
+  };
+  setInterval(reloadMessages, 5000);
 });
