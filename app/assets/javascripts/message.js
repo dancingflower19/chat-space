@@ -8,7 +8,7 @@ $(function(){
                     ${message.user_name}
                   </div>
                   <div class="upper-message__date">
-                    ${message.created_at}
+                    ${message.date}
                   </div>
                 </div>
                 <div class="lower-message">
