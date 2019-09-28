@@ -18,3 +18,5 @@
 
 public/uploads/*
 exp-html-exam/
+
+config/secrets.yml
