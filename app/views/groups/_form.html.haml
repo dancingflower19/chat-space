@@ -14,8 +14,7 @@
 
     .chat-group-form__field--left
       =label_tag(:search ,class:"chat-group-form__label" , for: "chat_group_field") do
-        チャットメンバ
-        ーを追加
+        チャットメンバーを追加
     .chat-group-form__field--right
       .chat-group-form__search.clearfix
         =text_field_tag :search, "", {:placeholder => "追加したいユーザー名を入力してください", class: "chat-group-form__input",id: "user-search-field"}
@@ -31,7 +30,7 @@
           %p.chat-group-user__name
             - @group.users.each do |members|
               = members.name
-            #member-search-result
+              #member-search-result
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
