@@ -7,8 +7,9 @@
     box-sizing: border-box;
     height: 100px;
     padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
     .left-header {
-      float: left;
       &__title {
         color: #333;
         font-size: 20px;
@@ -27,12 +28,11 @@
     .right-header {
       border: 1px solid $light_blue;
       color: $light_blue;
-      float: right;
       height: 40px;
       line-height: 40px;
       margin-top: 28px;
       padding: 0 20px;
-      &__button {
+      a{
         color: $light_blue;
         text-decoration: none;
       }
