@@ -39,7 +39,7 @@ $(function(){
             $('.messages').append(html)
             $('.form__submit').prop('disabled', false);
             $('form').get(0).reset();
-            $('.messages').animate({scrollTop: $(".messages")[0].scrollHeight}, 1500);
+            $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
           })
           .fail(function(){
             alert('メッセージの送信に失敗しました');
@@ -53,11 +53,10 @@ $(function(){
         url: "api/messages",
         type: 'GET',
         dataType: 'json',
-        data: { last_message_id: last_message_id}
+        data: { id: last_message_id}
       })
       .done(function(messages) {
         var insertHTML = '';
-        console.log(messages)
         messages.forEach(function (message){
           insertHTML = buildMessage(message);
           $('.messages').append(insertHTML);
